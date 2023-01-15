@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'arial';
+}
+
+body {
+    background-color: rgb(253, 251, 251);
+}
+
+.items {
+    position: absolute;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 100px;
+    z-index: 1;
+}
+
+.items_1 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.x h1 {
+    text-align: center;
+}
+
+.item {
+    width: 300px;
+    height: 350px;
+    background-color: white;
+    margin-left: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 10px rgba(34, 60, 80, 0.068);
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item img {
+    width: 200px;
+    height: 250px;
+}
+
+.item input {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+}
+
+.item input:hover {
+    box-shadow: 0px 0px 10px 5px #bbb;
+    cursor: pointer;
+}
+
+.item input:active {
+    box-shadow: 0px 0px 10px 5px #bbb inset;
+}
+
+.paket {
+    display: none;
+    position: absolute;
+    width: 90%;
+    background-color: white;
+    top: 60px;
+    left: 5%;
+    z-index: 20;
+    box-shadow: 0 0 200px 10px black;
+    border-radius: 50px;
+}
+
+.x {
+    width: 95%;
+    height: 10px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.x span {
+    float: right;
+    font-size: 35px;
+    text-decoration: none;
+    color: black;
+    padding: 1px 2px;
+}
+
+.x span:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 5px black;
+}
+
+.market img {
+    width: 115px;
+    transition: 0.2s ease-in-out;
+}
+
+.market {
+    float: right;
+    margin: 20px;
+}
+
+.market .count {
+    display: none;
+    text-align: center;
+    position: absolute;
+    padding-top: 7px;
+    right: 40px;
+    top: 35px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: aqua;
+    color: #333;
+    font-weight: bold;
+}
+
+.market img:hover {
+    width: 115px;
+    cursor: pointer;
+}
+
+.market img:active {
+    width: 120px;
+}
