@@ -140,3 +140,6 @@ body {
 .market img:active {
     width: 120px;
 }
+#p{
+    color: red;
+}
