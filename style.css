@@ -23,7 +23,9 @@ body {
 }
 
 .items_1 {
+    /* position: absolute; */
     display: flex;
+    z-index: 1;
     justify-content: center;
     flex-wrap: wrap;
     width: 80%;
@@ -77,6 +79,7 @@ body {
 
 .paket {
     display: none;
+    flex-wrap: wrap;
     position: absolute;
     width: 90%;
     background-color: white;
@@ -139,7 +142,4 @@ body {
 
 .market img:active {
     width: 120px;
-}
-#p{
-    color: red;
 }

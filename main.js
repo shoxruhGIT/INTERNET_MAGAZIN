@@ -1,44 +1,72 @@
 const btns = document.querySelectorAll('.btn')
-const items = document.querySelector('.items'),
-      paket = document.querySelector('.paket'),
-      market = document.querySelector('.market'),
-      x = document.querySelector('.close'),
-      container = document.querySelector('.container'),
-      count = document.querySelector('.count'),
-      warning = document.querySelector('#p')
+let buyBooks = [],
+count = document.querySelector('.count'),
+market = document.querySelector('.market'),
+paket = document.querySelector('.paket'),
+items_1 = document.querySelector('.items_1'),
+x = document.querySelector('.x'),
+p = document.querySelector('#p')
 
 
-for(let elem of btns){
-  elem.addEventListener('click', function () {
-    elem.value = 'Udalit iz Karzino'
-    elem.style.backgroundColor = 'red'
-    cloneParent = elem.parentElement.cloneNode(true)
-    elem.parentElement.style.display = 'none'
-    paket.appendChild(cloneParent)
-    count.style.display = 'block'
-    count.innerHTML = paket.children.length-2
-    if (paket.children.length = 0 ) {
-
-      warning.style.display = 'block'
+// display and fiu
+const addDisplay=(tag,disp)=>{
+  if(getComputedStyle(tag).display === 'none'){
+    tag.style.display = disp
   }
   else{
-    // paket.style.display = 'block'
-    warning.style.display = 'none'
+    tag.style.display = disp
+  }
+}
+
+// marketga qo'shiladigan formula
+
+for(let btn of btns){
+  btn.addEventListener('click', ()=>{
+    let clone = btn.parentElement.cloneNode(true)
+    clone.classList.add('clone')
+    clone.children[1].classList.add('btnClone')
+    p.innerHTML = ''
+    addDisplay(count,'block')
+    buyBooks.push(clone)
+    count.innerHTML = buyBooks.length
+
+  })
+
+}
+
+market.addEventListener('click', ()=>{
+
+  let items_1 = document.createElement('div')
+    items_1.classList.add('items_1')
+    paket.appendChild(items_1)
+
+ if(buyBooks.length > 0){
+    addDisplay(paket,'flex')
+    for(let book of buyBooks){
+      const bookClone = book.cloneNode(true)
+      const trash = document.createElement('button')
+      trash.innerHTML = 'Удалить'
+      trash.style.backgroundColor = 'red'
+      items_1.append(bookClone)
+    }
+ }else{
+  p.style.color = 'red'
+  p.innerHTML = 'Корзино пусто!'
+ }
+
+ let btnsClone = document.querySelectorAll('.btnClone')
+  for(let btnClone of btnsClone){
+    btnClone.addEventListener('click', function () {
+      console.log(buyBooks);
+      
+    })
 
   }
-  x.addEventListener('click', ()=>{
 
-    paket.style.display = 'none'
-  })
-    market.addEventListener('click', ()=>{
+})
 
-
-
-      paket.style.display = 'block'
-
-      elem.style.backgroundColor = 'red'
-
-    })
-    elem.style.backgroundColor = 'red'
-  })
-}
+x.addEventListener('click', ()=>{
+  addDisplay(paket,'none')
+  let items_1 = document.querySelector('.items_1')
+    items_1.remove()
+})
