@@ -5,7 +5,8 @@ market = document.querySelector('.market'),
 paket = document.querySelector('.paket'),
 items_1 = document.querySelector('.items_1'),
 x = document.querySelector('.x'),
-p = document.querySelector('#p')
+p = document.querySelector('#p'),
+item = document.querySelector('.item')
 
 
 // display and fiu
@@ -57,8 +58,12 @@ market.addEventListener('click', ()=>{
  let btnsClone = document.querySelectorAll('.btnClone')
   for(let btnClone of btnsClone){
     btnClone.addEventListener('click', function () {
-      console.log(buyBooks);
-      
+
+
+
+      let newGoods = buyBooks.filter(item=> `${item}` != `${btnClone.parentElement}`)
+      console.log(newGoods);
+
     })
 
   }
